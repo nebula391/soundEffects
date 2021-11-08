@@ -35,9 +35,7 @@ class Projectile {
   }
 }
 
-function update() {
-  
-}
+function update() {}
 
 const centerX = canvas.width / 2;
 const centerY = canvas.height / 2;
