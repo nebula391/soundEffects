@@ -41,14 +41,17 @@ const player = new Player(centerX, centerY, 30, 'blue');
 
 player.draw();
 
-addEventListener('click', (event) => {
+function animate() {
+  requestAnimationFrame();
+}
+
+window.addEventListener('click', (event) => {
   const projectile = new Projectile(
-    event.clientX,
-    event.clientY,
+    canvas.width / 2,
+    canvas.height / 2,
     5,
     'red',
     null
   );
   projectile.draw();
-}
-);
+});
