@@ -34,6 +34,11 @@ class Projectile {
     ctx.fill();
   }
 }
+
+function update() {
+  
+}
+
 const centerX = canvas.width / 2;
 const centerY = canvas.height / 2;
 
@@ -43,6 +48,7 @@ player.draw();
 
 function animate() {
   requestAnimationFrame(animate);
+  console.log('seeadfasfdsefsfevx');
 }
 
 window.addEventListener('click', (event) => {
