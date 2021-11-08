@@ -42,7 +42,7 @@ const player = new Player(centerX, centerY, 30, 'blue');
 player.draw();
 
 function animate() {
-  requestAnimationFrame();
+  requestAnimationFrame(animate);
 }
 
 window.addEventListener('click', (event) => {
