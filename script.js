@@ -46,7 +46,7 @@ player.draw();
 
 function animate() {
   requestAnimationFrame(animate);
-  console.log('seeadfasfdsefsfevx');
+  console.log('hi');
 }
 
 window.addEventListener('click', (event) => {
