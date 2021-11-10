@@ -58,6 +58,8 @@ function animate() {
 animate();
 
 window.addEventListener('click', (event) => {
+  const angle = Math.atan2(event.clientY - canvas.height / 2, event.clientX - canvas.width / 2);
+  }
   projectiles.push(
     new Projectile(canvas.width / 2, canvas.height / 2, 5, 'red', {
       x: 1,
