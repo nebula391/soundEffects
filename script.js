@@ -33,9 +33,12 @@ class Projectile {
     ctx.fillStyle = this.color;
     ctx.fill();
   }
+  update() {
+    this.draw();
+    this.x = this.x + this.velocity.x;
+    this.y = this.y + this.velocity.y;
+  }
 }
-
-function update() {}
 
 const centerX = canvas.width / 2;
 const centerY = canvas.height / 2;
@@ -44,18 +47,21 @@ const player = new Player(centerX, centerY, 30, 'blue');
 
 player.draw();
 
+const projectiles = [];
+
 function animate() {
   requestAnimationFrame(animate);
-  console.log('hi');
+  projectiles.forEach((Projectile) => {
+    Projectile.update();
+  });
 }
+animate();
 
 window.addEventListener('click', (event) => {
-  const projectile = new Projectile(
-    canvas.width / 2,
-    canvas.height / 2,
-    5,
-    'red',
-    null
+  projectiles.push(
+    new Projectile(canvas.width / 2, canvas.height / 2, 5, 'red', {
+      x: 1,
+      y: 1,
+    })
   );
-  projectile.draw();
 });
