@@ -62,9 +62,12 @@ window.addEventListener('click', (event) => {
     event.clientY - canvas.height / 2,
     event.clientX - canvas.width / 2
   );
-  //veocity here: 35.38
+  const velocity = {
+    x: 1,
+    y: 1,
+  };
   console.log(angle);
   projectiles.push(
-    new Projectile(canvas.width / 2, canvas.height / 2, 5, 'red', angle)
+    new Projectile(canvas.width / 2, canvas.height / 2, 5, 'red', velocity)
   );
 });
