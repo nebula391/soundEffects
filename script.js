@@ -63,8 +63,8 @@ window.addEventListener('click', (event) => {
     event.clientX - canvas.width / 2
   );
   const velocity = {
-    x: angle,
-    y: angle,
+    x: Math.cos(angle),
+    y: Math.sin(angle),
   };
   console.log(angle);
   projectiles.push(
