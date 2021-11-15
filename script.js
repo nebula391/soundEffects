@@ -82,7 +82,6 @@ function animate() {
     Projectile.update();
   });
 }
-animate();
 
 window.addEventListener('click', (event) => {
   const angle = Math.atan2(
@@ -98,3 +97,5 @@ window.addEventListener('click', (event) => {
     new Projectile(canvas.width / 2, canvas.height / 2, 5, 'red', velocity)
   );
 });
+animate();
+spawnEnemies();
