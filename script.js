@@ -74,7 +74,11 @@ function spawnEnemies() {
     const y = 100;
     const radius = 30;
     const color = 'green';
-    enemies.push(new Enemy());
+    const velocity = {
+      x: 1,
+      y: 1,
+    };
+    enemies.push(new Enemy(x, y, radius, color, velocity));
   }, 1000);
 }
 function animate() {
