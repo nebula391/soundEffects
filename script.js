@@ -80,7 +80,6 @@ function spawnEnemies() {
       x = Math.random() * canvas.width;
       y = Math.random() < 0.5 ? 0 - radius : canvas.height + radius;
     }
-    //y = Math.random() < 0.5 ? 0 - radius : canvas.height + radius;
     const color = 'green';
     const angle = Math.atan2(canvas.height / 2 - y, canvas.width / 2 - x);
 
