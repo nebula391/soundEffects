@@ -100,12 +100,14 @@ function animate() {
   projectiles.forEach((Projectile) => {
     Projectile.update();
   });
-  enemies.forEach((Enemy) => {
+  enemies.forEach((Enemy, enemyIndex) => {
     Enemy.update();
-    projectiles.forEach((Projectile) => {
+    projectiles.forEach((Projectile, projectileIndex) => {
       const dist = Math.hypot(Projectile.x - Enemy.x, Projectile.y - Enemy.y);
       if (dist - Projectile.radius - Enemy.radius < 1) {
         console.log('remove');
+        enemies.splice(enemyIndex, 1);
+        projectiles.splice(projectileIndex, 1);
       }
     });
   });
