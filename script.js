@@ -102,6 +102,12 @@ function animate() {
   });
   enemies.forEach((Enemy) => {
     Enemy.update();
+    projectiles.forEach((Projectile) => {
+      const dist = Math.hypot(Projectile.x - Enemy.x, Projectile.y - Enemy.y);
+      if (dist - Projectile.radius - Enemy.radius < 1) {
+        console.log('remove');
+      }
+    });
   });
 }
 
