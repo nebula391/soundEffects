@@ -70,7 +70,11 @@ const enemies = [];
 
 function spawnEnemies() {
   setInterval(() => {
-    console.log('go');
+    const x = 100;
+    const y = 100;
+    const radius = 30;
+    const color = 'green';
+    enemies.push(new Enemy());
   }, 1000);
 }
 function animate() {
