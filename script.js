@@ -71,7 +71,6 @@ const enemies = [];
 function spawnEnemies() {
   setInterval(() => {
     const radius = Math.random() * (30 - 5) + 5;
-    console.log(radius);
     let x;
     let y;
     if (Math.random() < 0.5) {
@@ -89,7 +88,6 @@ function spawnEnemies() {
       y: Math.sin(angle),
     };
     enemies.push(new Enemy(x, y, radius, color, velocity));
-    console.log(enemies);
   }, 1000);
 }
 function animate() {
@@ -103,9 +101,9 @@ function animate() {
   enemies.forEach((Enemy, enemyIndex) => {
     Enemy.update();
     const dist = Math.hypot(player.x - Enemy.x, player.y - Enemy.y);
-    console.log(dist);
     //59:06
     if (dist - Player.radius - Enemy.radius < 1) {
+      console.log('die');
     }
     projectiles.forEach((Projectile, projectileIndex) => {
       const dist = Math.hypot(Projectile.x - Enemy.x, Projectile.y - Enemy.y);
@@ -128,7 +126,6 @@ window.addEventListener('click', (event) => {
     x: Math.cos(angle),
     y: Math.sin(angle),
   };
-  console.log(angle);
   projectiles.push(
     new Projectile(canvas.width / 2, canvas.height / 2, 5, 'red', velocity)
   );
